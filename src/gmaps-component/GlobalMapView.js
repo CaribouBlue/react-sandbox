@@ -1,5 +1,5 @@
 import React from 'react';
-import GoogleMap from 'google-maps-for-react';
+import GoogleMap from './GoogleMap';
 
 export default () => {
   const exampleMarkers = [
