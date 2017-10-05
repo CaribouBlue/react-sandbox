@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import speech from './speech-syn/speech';
+import speech from 'speech-synth';
 
 class App extends Component {
   constructor(props) {
@@ -36,7 +36,7 @@ class App extends Component {
 
   submit(e) {
     e.preventDefault();
-    speech.sayIt(this.state.input, this.state.voiceURI)
+    speech.say(this.state.input, this.state.voiceURI)
   }
 
   render() {
@@ -61,7 +61,7 @@ class App extends Component {
             onChange={this.optionChange}
           >
             {
-              speech.getVoiceOptions().map(voice => (
+              speech.getVoiceNames().map(voice => (
                 <option
                   value={voice}
                   key={_.uniqueId()}
